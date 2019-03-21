@@ -1,9 +1,12 @@
-import { getHTML, getFollersTweeter } from "./lib/scraper";
+import { getHTML, getCountInsta, getCountTweeter } from "./lib/scraper";
 
 async function go() {
-    const value = await getHTML("https://twitter.com/elonmusk?lang=fr");
-    const followers = await getFollersTweeter(value);
-    console.log(followers);
+    const [instaCount, tweeterCount] = await Promise.all([
+        getCountInsta(),
+        getCountTweeter()
+    ]);
+    console.log("followers Twitter:", instaCount);
+    console.log("followers Instagram:", tweeterCount);
 }
 
 go();
