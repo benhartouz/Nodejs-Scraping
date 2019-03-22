@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
-    "dev": "node --inspect -r esm index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --inspect -r esm index.js --ignore db.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
-    "esm": "^3.2.18"
+    "esm": "^3.2.18",
+    "express": "^4.16.4",
+    "lowdb": "^1.0.0",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
